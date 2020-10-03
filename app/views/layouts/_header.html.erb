@@ -1,0 +1,52 @@
+<header class="g-header">
+  <div class="header-inner">
+    <div class="header-menu js-menu-open">
+      <div class="line"></div>
+    </div>
+    <%= link_to root_path, class: 'header-logo' do %>
+      <h2 class="title">誰推しBook</h2>
+    <% end %>
+    <%= link_to '#', class: 'header-post' do %>
+      <img class="image" src="https://placehold.jp/150x150.png">
+    <% end %>
+  </div>
+  <div class="menu-area">
+    <div class="menu-content">
+      <div class="menu-header"><a class="acount" href="">ここにアカウント名がここにきます</a>
+        <div class="close js-menu-close"></div>
+      </div>
+      <div class="menu-list">
+        <%= link_to '#', class: 'item' do %>
+          <div class="title">マイページ</div>
+          <div class="arrow"></div>
+        <% end %>
+        <%= link_to '#', class: 'item' do %>
+          <div class="title">お気に入り</div>
+          <div class="arrow"></div>
+        <% end %>
+        <%= link_to '#', class: 'item' do %>
+          <div class="title">投稿した本</div>
+          <div class="arrow"></div>
+        <% end %>
+        <div class="item js-modal-open" id="logout">
+          <div class="title">ログアウト</div>
+          <div class="arrow"></div>
+        </div>
+      </div>
+      <div class="menu-footer">
+        <div class="remove">アカウントを削除する</div>
+      </div>
+    </div>
+  </div>
+  <div class="header-overlay js-menu-close"></div>
+</header>
+<div class="overlay-cover js-modal-close"></div>
+<div class="modal-block js-modal" data-modal="logout">
+  <div class="heading">本当にログアウトしますか？</div>
+  <button class="m-button -reverse">
+    <div class="content">ログアウトする</div>
+  </button>
+  <div class="m-button js-modal-close">
+    <div class="content">キャンセル</div>
+  </div>
+</div>

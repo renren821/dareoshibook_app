@@ -7,13 +7,16 @@
     <title><%= full_title(yield(:title)) %></title>
     <meta name="description" content="">
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700,900&amp;display=swap" rel="stylesheet">
   </head>
 
   <body>
+  <%= render 'layouts/header' %>
+  <div class="layout-wrap">
     <%= yield %>
+    <%= render 'layouts/footer' %>
+  </div>
   </body>
 </html>
