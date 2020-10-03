@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>DareoshibookApp</title>
+<html lang="ja">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,target-densitydpi=medium-dpi,initial-scale=1,minimum-scale=1,shrink-to-fit=no">
+    <title><%= yield(:title) %> - 誰推しBook</title>
+    <meta name="description" content="">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700,900&amp;display=swap" rel="stylesheet">
   </head>
 
   <body>
