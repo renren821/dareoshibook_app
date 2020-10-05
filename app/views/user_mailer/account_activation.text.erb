@@ -1,6 +1,5 @@
-<%= @user.name %>さん、こんにちは。
+Hi <%= @user.name %>,
 
-誰推しBookにご登録いただきありがとうございます！
-下のリンクをクリックしてアカウントの有効化を完了してください。
+Welcome to the Sample App! Click on the link below to activate your account:
 
 <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
