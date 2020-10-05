@@ -1,0 +1,9 @@
+<h1>誰推しBook</h1>
+
+<p><%= @user.name %>さん、こんにちは。</p>
+
+<p>誰推しBookにご登録いただきありがとうございます！</p>
+<p>下のリンクをクリックしてアカウントの有効化を完了してください。</p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>
