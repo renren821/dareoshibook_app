@@ -1,9 +1,9 @@
 // フラッシュアラート
 .alert-block {
   width: 93%;
-  padding: 25px 30px;
+  padding: 25px 15px;
   margin: 0 auto 20px;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 10px;
 }
 
@@ -11,6 +11,12 @@
   color: #59C3C3;
   background-color: #F5FFFF;
   border: 1px solid #59C3C3;
+}
+
+.alert-block.-danger {
+  color: #ff2968;
+  background-color: #ffeaf0;
+  border: 1px solid #ff2968;
 }
 
 // エラー
@@ -35,4 +41,13 @@
   padding-bottom: 8px;
   font-size: 14px;
   color: #ff2968;
+}
+
+// ヘッダーメニュー
+.header-inner > .empty {
+  width: 40px;
+}
+
+.menu-footer > .remove.-black {
+  color: #0a090c;
 }

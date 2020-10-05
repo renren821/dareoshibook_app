@@ -1,0 +1,27 @@
+<% provide(:title, "ログイン") %>
+
+<h3 class="g1-heading">ログイン</h3>
+<div class="item-wrap">
+  <%= form_for :session, url: login_path, html: { class: 'form-field' } do |f| %>
+    <div class="input-field">
+      <div class="title">メールアドレス</div>
+      <div class="block">
+        <%= f.email_field :email, class: 'input js-input' %>
+        <label class="label js-label" for="session_email">メールアドレス</label>
+      </div>
+    </div>
+    <div class="input-field">
+      <div class="title">パスワード</div>
+      <div class="block">
+        <%= f.password_field :password, class: 'input js-input' %>
+        <label class="label js-label" for="session_password">パスワード</label>
+      </div>
+    </div>
+    <%= button_tag :type => "submit", class: "m-button" do %>
+      <div class="content">ログインする</div>
+    <% end %>
+    <div class="link">
+      <%= link_to '新規登録はこちら', signup_path, class: 'content' %>
+    </div>
+  <% end %>
+</div>

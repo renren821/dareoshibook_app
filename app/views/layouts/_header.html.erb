@@ -6,35 +6,50 @@
     <%= link_to root_path, class: 'header-logo' do %>
       <h2 class="title">誰推しBook</h2>
     <% end %>
-    <%= link_to '#', class: 'header-post' do %>
-      <img class="image" src="https://placehold.jp/150x150.png">
+    <% if logged_in? %>
+      <%= link_to '#', class: 'header-post' do %>
+        <img class="image" src="https://placehold.jp/150x150.png">
+      <% end %>
+    <% else %>
+      <div class="empty"></div>
     <% end %>
   </div>
   <div class="menu-area">
     <div class="menu-content">
-      <div class="menu-header"><a class="acount" href="">ここにアカウント名がここにきます</a>
+      <div class="menu-header">
+        <% if logged_in? %>
+          <%= link_to current_user.name, current_user, class: 'acount' %>
+        <% else %>
+          <%= link_to 'ログインする', login_path, class: 'acount' %>
+        <% end %>
         <div class="close js-menu-close"></div>
       </div>
-      <div class="menu-list">
-        <%= link_to '#', class: 'item' do %>
-          <div class="title">マイページ</div>
-          <div class="arrow"></div>
-        <% end %>
-        <%= link_to '#', class: 'item' do %>
-          <div class="title">お気に入り</div>
-          <div class="arrow"></div>
-        <% end %>
-        <%= link_to '#', class: 'item' do %>
-          <div class="title">投稿した本</div>
-          <div class="arrow"></div>
-        <% end %>
-        <div class="item js-modal-open" id="logout">
-          <div class="title">ログアウト</div>
-          <div class="arrow"></div>
+      <% if logged_in? %>
+        <div class="menu-list">
+          <%= link_to '#', class: 'item' do %>
+            <div class="title">マイページ</div>
+            <div class="arrow"></div>
+          <% end %>
+          <%= link_to '#', class: 'item' do %>
+            <div class="title">お気に入り</div>
+            <div class="arrow"></div>
+          <% end %>
+          <%= link_to '#', class: 'item' do %>
+            <div class="title">投稿した本</div>
+            <div class="arrow"></div>
+          <% end %>
+          <div class="item js-modal-open" id="logout">
+            <div class="title">ログアウト</div>
+            <div class="arrow"></div>
+          </div>
         </div>
-      </div>
+      <% end %>
       <div class="menu-footer">
-        <div class="remove">アカウントを削除する</div>
+        <% if logged_in? %>
+          <div class="remove">アカウントを削除する</div>
+        <% else %>
+          <div class="remove -black">アカウントを作成する</div>
+        <% end %>
       </div>
     </div>
   </div>
