@@ -1,0 +1,38 @@
+// フラッシュアラート
+.alert-block {
+  width: 93%;
+  padding: 25px 30px;
+  margin: 0 auto 20px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.alert-block.-success {
+  color: #59C3C3;
+  background-color: #F5FFFF;
+  border: 1px solid #59C3C3;
+}
+
+// エラー
+.error-block {
+  margin-bottom: 40px;
+}
+
+.error-block > .alert {
+  padding-bottom: 5px;
+  font-size: 15px;
+  color: #ff2968;
+}
+
+.error-block > .list {
+  padding: 20px 30px;
+  background-color: #ffeaf0;
+  border: 1px solid #ff2968;
+  border-radius: 10px;
+}
+
+.error-block > .list > .item {
+  padding-bottom: 8px;
+  font-size: 14px;
+  color: #ff2968;
+}
