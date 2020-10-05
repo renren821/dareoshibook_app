@@ -1,0 +1,39 @@
+<% provide(:title, "アカウント編集") %>
+
+<h3 class="g1-heading">アカウント編集</h3>
+<div class="item-wrap">
+  <%= form_for @user, html: { class: 'form-field' } do |f| %>
+    <%= render 'shared/error_messages' %>
+    <div class="input-field">
+      <div class="title">お名前</div>
+      <div class="block">
+        <%= f.text_field :name, class: 'input js-input' %>
+        <label class="label js-label" for="user_name">お名前</label>
+      </div>
+    </div>
+    <div class="input-field">
+      <div class="title">メールアドレス</div>
+      <div class="block">
+        <%= f.email_field :email, class: 'input js-input' %>
+        <label class="label js-label" for="user_email">メールアドレス</label>
+      </div>
+    </div>
+    <div class="input-field">
+      <div class="title">パスワード</div>
+      <div class="block">
+        <%= f.password_field :password, class: 'input js-input' %>
+        <label class="label js-label" for="user_password">パスワード</label>
+      </div>
+    </div>
+    <div class="input-field">
+      <div class="title">確認用パスワード</div>
+      <div class="block">
+        <%= f.password_field :password_confirmation, class: 'input js-input' %>
+        <label class="label js-label" for="user_password_confirmation">確認用パスワード</label>
+      </div>
+    </div>
+    <%= button_tag :type => "submit", class: "m-button" do %>
+      <div class="content">変更する</div>
+    <% end %>
+  <% end %>
+</div>

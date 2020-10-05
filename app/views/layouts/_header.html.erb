@@ -18,7 +18,7 @@
     <div class="menu-content">
       <div class="menu-header">
         <% if logged_in? %>
-          <%= link_to current_user.name, current_user, class: 'acount' %>
+          <%= link_to current_user.name, edit_user_path(current_user), class: 'acount' %>
         <% else %>
           <%= link_to 'ログインする', login_path, class: 'acount' %>
         <% end %>
@@ -58,9 +58,9 @@
 <div class="overlay-cover js-modal-close"></div>
 <div class="modal-block js-modal" data-modal="logout">
   <div class="heading">本当にログアウトしますか？</div>
-  <button class="m-button -reverse">
+  <%= link_to logout_path, method: :delete, class: 'm-button -reverse' do %>
     <div class="content">ログアウトする</div>
-  </button>
+  <% end %>
   <div class="m-button js-modal-close">
     <div class="content">キャンセル</div>
   </div>

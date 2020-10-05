@@ -15,9 +15,9 @@ button {
 }
 
 .alert-block.-success {
-  color: #59C3C3;
+  color:  #326273;
   background-color: #F5FFFF;
-  border: 1px solid #59C3C3;
+  border: 1px solid  #326273;
 }
 
 .alert-block.-danger {
@@ -94,4 +94,35 @@ button {
 .checkbox-block > .description {
   font-size: 13px;
   color: rgba(0, 0, 0, .6);
+}
+
+// ボーダーリスト
+.list-border > .item {
+  display: flex!important;
+  justify-content: space-between;
+}
+
+.list-border > .item > .link {
+  min-width: 44px;
+  color: #326273;
+}
+
+.list-border > .item > .link:nth-of-type(n+2) {
+  margin-left: 15px;
+}
+
+// ページネーション
+.pagination {
+  flex-wrap: wrap;
+}
+
+.pagination * {
+  margin: 4px!important;
+  border: 1px solid #f45b69!important;
+}
+
+.pagination > .previous_page.disabled,
+.pagination > .next_page.disabled {
+  color: rgba(0, 0, 0, .3);
+  border: 1px solid rgba(0, 0, 0, .3)!important;
 }

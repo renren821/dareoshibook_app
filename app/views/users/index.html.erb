@@ -1,0 +1,10 @@
+<% provide(:title, "全てのユーザー") %>
+
+<h3 class="g1-heading">全てのユーザー</h3>
+<%= will_paginate previous_label: '&lt', next_label: '&gt', inner_window: 1, outer_window: 0 %>
+<div class="item-wrap">
+  <div class="list-border">
+    <%= render @users %>
+  </div>
+</div>
+<%= will_paginate previous_label: '&lt', next_label: '&gt', inner_window: 1, outer_window: 0 %>
