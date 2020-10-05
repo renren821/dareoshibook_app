@@ -1,3 +1,10 @@
+// チェックボックス
+input,
+button {
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  cursor:pointer;
+}
+
 // フラッシュアラート
 .alert-block {
   width: 93%;
@@ -50,4 +57,41 @@
 
 .menu-footer > .remove.-black {
   color: #0a090c;
+}
+
+// チェックボックス
+.checkbox-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.checkbox-block > .input {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border: 2px solid #f45b69;
+  border-radius: 6px;
+}
+
+.checkbox-block > .input:checked {
+  position: relative;
+  background-color: #f45b69;
+}
+
+.checkbox-block > .input:checked::before {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  width: 10px;
+  height: 5px;
+  content: '';
+  border-bottom: 2px solid var(--palette-white);
+  border-left: 2px solid var(--palette-white);
+  transform: rotate(-45deg);
+}
+
+.checkbox-block > .description {
+  font-size: 13px;
+  color: rgba(0, 0, 0, .6);
 }

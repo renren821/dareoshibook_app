@@ -17,6 +17,10 @@
         <label class="label js-label" for="session_password">パスワード</label>
       </div>
     </div>
+    <%= f.label :remember_me, class: "checkbox-block" do %>
+      <%= f.check_box :remember_me, class: 'input' %>
+      <span class="description">ログイン状態を保存する</span>
+    <% end %>
     <%= button_tag :type => "submit", class: "m-button" do %>
       <div class="content">ログインする</div>
     <% end %>
