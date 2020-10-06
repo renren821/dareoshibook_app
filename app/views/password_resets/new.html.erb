@@ -1,0 +1,17 @@
+<% provide(:title, "パスワード忘れた方") %>
+
+<h3 class="g1-heading">パスワード忘れた方</h3>
+<div class="item-wrap">
+  <%= form_for :password_reset, url: password_resets_path, html: { class: 'form-field' } do |f| %>
+    <div class="input-field">
+      <div class="title">メールアドレス</div>
+      <div class="block">
+        <%= f.email_field :email, class: 'input js-input' %>
+        <label class="label js-label" for="session_email">メールアドレス</label>
+      </div>
+    </div>
+    <%= button_tag :type => "submit", class: "m-button" do %>
+      <div class="content">送信する</div>
+    <% end %>
+  <% end %>
+</div>

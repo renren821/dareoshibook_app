@@ -12,6 +12,7 @@
     </div>
     <div class="input-field">
       <div class="title">パスワード</div>
+      <%= link_to "(忘れた方はこちら)", new_password_reset_path, class: 'link' %>
       <div class="block">
         <%= f.password_field :password, class: 'input js-input' %>
         <label class="label js-label" for="session_password">パスワード</label>
