@@ -1,0 +1,41 @@
+<%= form_for @post, html: { class: 'form-field' } do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="input-field">
+    <div class="title -required">本のタイトル</div>
+    <div class="block">
+      <%= f.text_field :name, class: 'input js-input' %>
+      <label class="label js-label" for="post_name">本のタイトル</label>
+    </div>
+  </div>
+  <div class="input-field">
+    <div class="title -required">著者</div>
+    <div class="block">
+      <%= f.text_field :author, class: 'input js-input' %>
+      <label class="label js-label" for="post_author">著者</label>
+    </div>
+  </div>
+  <div class="input-field">
+    <div class="title -required">この本をお勧めしている著名人</div>
+    <div class="block">
+      <%= f.text_field :celebrity, class: 'input js-input' %>
+      <label class="label js-label" for="post_celebrity">この本をお勧めしている著名人</label>
+    </div>
+  </div>
+  <div class="input-field -textarea">
+    <div class="title -required">紹介文の引用</div>
+    <div class="block">
+      <%= f.text_area :introduction, class: 'input js-input' %>
+      <label class="label js-label" for="post_introduction">紹介文の引用</label>
+    </div>
+  </div>
+  <div class="input-field">
+    <div class="title">参考URL</div>
+    <div class="block">
+      <%= f.text_field :reference, class: 'input js-input' %>
+      <label class="label js-label" for="post_reference">参考URL</label>
+    </div>
+  </div>
+  <%= button_tag :type => "submit", class: "m-button" do %>
+    <div class="content">投稿する</div>
+  <% end %>
+<% end %>

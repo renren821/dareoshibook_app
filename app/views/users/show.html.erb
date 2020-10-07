@@ -1,14 +1,16 @@
 <% provide(:title, @user.name) %>
 
+<%= link_to upload_path, class: 'floating-button' do %>
   <div class="cover"></div>
-</a>
+<% end %>
+  
 <h3 class="g1-heading">
   <% if current_user?(@user) %>
     マイページ
   <% else %>
-    「<%= @user.name %>」さんの投稿ページ
+    「<%= @user.name %>」さんのページ
   <% end %>
-  </h3>
+</h3>
 <div class="info-block">
   <div class="cover">
     <div class="block">
@@ -23,55 +25,10 @@
     </a>
   </div>
 </div>
-<ul class="item-list">
-  <li class="item-wrap">
-    <a class="item-block" href="">
-      <div class="title">『 龍馬伝 』</div>
-      <div class="author">福田 靖<span>（著）</span></div>
-      <div class="celebrity"><%= image_tag 'celebrity.png', class: 'image' %>
-        <div class="name">孫正義<span class="small">さんの推し本</span></div>
-      </div>
-      <div class="bubble">テスト文章ですここにおすすめ文がきますよろしくお願いいたします！</div>
-    </a>
-  </li>
-  <li class="item-wrap">
-    <a class="item-block" href="">
-      <div class="title">『 そして誰もいなくなった 』</div>
-      <div class="author">アガサクリスティー<span>（著）</span></div>
-      <div class="celebrity"><%= image_tag 'celebrity.png', class: 'image' %>
-        <div class="name">隈研吾<span class="small">さんの推し本</span></div>
-      </div>
-      <div class="bubble">テスト文章ですここにおすすめ文がきますよろしくお願いいたします！テスト文章ですここにおすすめ文がきますよろしくお願いいたします！</div>
-    </a>
-  </li>
-  <li class="item-wrap">
-    <a class="item-block" href="">
-      <div class="title">『本のタイトルがここにきます』</div>
-      <div class="author">著者がここにきます<span>（著）</span></div>
-      <div class="celebrity"><%= image_tag 'celebrity.png', class: 'image' %>
-        <div class="name">著名人の名前<span class="small">さんの推し本</span></div>
-      </div>
-      <div class="bubble">テスト文章ですここにおすすめ文がきますよろしくお願いいたします！</div>
-    </a>
-  </li>
-  <li class="item-wrap">
-    <a class="item-block" href="">
-      <div class="title">『本のタイトルがここにきます』</div>
-      <div class="author">著者がここにきます<span>（著）</span></div>
-      <div class="celebrity"><%= image_tag 'celebrity.png', class: 'image' %>
-        <div class="name">著名人の名前著名人の<span class="small">さんの推し本</span></div>
-      </div>
-      <div class="bubble">テスト文章ですここにおすすめ文がきますよろしくお願いいたします！</div>
-    </a>
-  </li>
-  <li class="item-wrap">
-    <a class="item-block" href="">
-      <div class="title">『本のタイトルがここにきます』</div>
-      <div class="author">著者がここにきます<span>（著）</span></div>
-      <div class="celebrity"><%= image_tag 'celebrity.png', class: 'image' %>
-        <div class="name">著名人の名前著名人の名<span class="small">さんの推し本</span></div>
-      </div>
-      <div class="bubble">テスト文章ですここにおすすめ文がきますよろしくお願いいたします！</div>
-    </a>
-  </li>
-</ul>
+<% if @user.posts.any? %>
+  <%= will_paginate @posts, previous_label: '&lt', next_label: '&gt', inner_window: 1, outer_window: 0 %>
+  <ul class="item-list">
+    <%= render @posts %>
+  </ul>
+  <%= will_paginate @posts, previous_label: '&lt', next_label: '&gt', inner_window: 1, outer_window: 0 %>
+<% end %>

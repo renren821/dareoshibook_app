@@ -1,14 +1,38 @@
 <% provide(:title, "") %>
 
-<div class="item-wrap">
-  <div class="b-heading">誰推しBook</div>
-  <div class="description">ここは著名人がお勧めしていた本を皆んなで紹介し合うサイトです。自分が好きな著名人の好きな本を共有していきましょう。<br>興味の湧く本が少しでも見つかると嬉しいです！</div>
-  <div class="form-field">
-    <%= link_to signup_path, class: 'm-button' do %>
-      <div class="content">新規登録する</div>
-    <% end %>
-    <div class="link">
-      <%= link_to 'ログインはこちら', login_path, class: 'content' %>
+<% if logged_in? %>
+<%= link_to upload_path, class: 'floating-button' do %>
+  <div class="cover"></div>
+<% end %>
+<h3 class="g1-heading"> トップページ</h3>
+<div class="info-block">
+  <div class="cover">
+    <div class="block">
+      <div class="count">24</div>
+      <div class="type">投稿</div>
     </div>
   </div>
+  <div class="cover">
+    <a class="block" href="">
+      <div class="count -link">1000</div>
+      <div class="type -link">フォロー中</div>
+    </a>
+  </div>
 </div>
+<ul class="item-list">
+  <%= render 'shared/feed' %>
+</ul>
+<% else %>
+  <div class="item-wrap">
+    <div class="b-heading">誰推しBook</div>
+    <div class="description">ここは著名人がお勧めしていた本を皆んなで紹介し合うサイトです。自分が好きな著名人の好きな本を共有していきましょう。<br>興味の湧く本が少しでも見つかると嬉しいです！</div>
+    <div class="form-field">
+      <%= link_to signup_path, class: 'm-button' do %>
+        <div class="content">新規登録する</div>
+      <% end %>
+      <div class="link">
+        <%= link_to 'ログインはこちら', login_path, class: 'content' %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -3,7 +3,7 @@
 <h3 class="g1-heading">新規登録</h3>
 <div class="item-wrap">
   <%= form_for @user, url: signup_path, html: { class: 'form-field' } do |f| %>
-    <%= render 'shared/error_messages' %>
+    <%= render 'shared/error_messages', object: f.object %>
     <div class="input-field">
       <div class="title">お名前</div>
       <div class="block">

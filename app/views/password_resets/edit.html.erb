@@ -3,7 +3,7 @@
 <h3 class="g1-heading">パスワードリセット</h3>
 <div class="item-wrap">
   <%= form_for @user, url: password_reset_path(params[:id]), html: { class: 'form-field' } do |f| %>
-    <%= render 'shared/error_messages' %>
+    <%= render 'shared/error_messages', object: f.object %>
     <%= hidden_field_tag :email, @user.email %>
     <div class="input-field">
       <div class="title">パスワード</div>
