@@ -4,4 +4,8 @@
     <%= render @feed_items %>
   </ul>
   <%= will_paginate @feed_items, previous_label: '&lt', next_label: '&gt', inner_window: 1, outer_window: 0 %>
+<% else %>
+  <ul class="item-list">
+    <%= render @latest_posts %>
+  </ul>
 <% end %>

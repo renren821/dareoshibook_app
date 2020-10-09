@@ -1,34 +1,31 @@
 <% provide(:title, @user.name) %>
 
-<%= link_to upload_path, class: 'floating-button' do %>
-  <div class="cover"></div>
-<% end %>
-  
 <h3 class="g1-heading">
   <% if current_user?(@user) %>
-    マイページ
+    投稿した本一覧
   <% else %>
-    「<%= @user.name %>」さんのページ
+    「<%= @user.name %>」さんの投稿した本一覧
   <% end %>
 </h3>
 <div class="info-block">
   <div class="cover">
     <div class="block">
-      <div class="count">24</div>
+      <div class="count"><%= @user.posts.count %></div>
       <div class="type">投稿</div>
     </div>
   </div>
-  <div class="cover">
-    <a class="block" href="">
-      <div class="count -link">1000</div>
-      <div class="type -link">フォロー中</div>
-    </a>
-  </div>
+  <%= render 'shared/stats' %>
 </div>
+<%= render 'follow_form' if logged_in? %>
 <% if @user.posts.any? %>
   <%= will_paginate @posts, previous_label: '&lt', next_label: '&gt', inner_window: 1, outer_window: 0 %>
   <ul class="item-list">
     <%= render @posts %>
   </ul>
   <%= will_paginate @posts, previous_label: '&lt', next_label: '&gt', inner_window: 1, outer_window: 0 %>
+  <% else %>
+    <h3 class="g1-heading">まだ投稿がないため、新着の誰推し本を表示しています。</h3>
+    <ul class="item-list">
+      <%= render @latest_posts %>
+    </ul>
 <% end %>

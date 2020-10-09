@@ -1,0 +1,41 @@
+<div class="layout-flex">
+  <h3 class="heading">誰推しBook詳細</h3>
+  <div class="cover">
+    <% if current_user?(@post_user) %>
+      <%= link_to '編集', edit_post_path(@post), class: 'link' %>
+      <div class="link -red js-modal-open" id="delete">削除
+      <div class="modal-block js-modal" data-modal="delete">
+        <div class="heading">本当に削除しますか？</div>
+        <%= link_to @post, method: :delete, class: 'm-button -reverse' do %>
+          <div class="content">削除する</div>
+        <% end %>
+        <div class="m-button js-modal-close">
+          <div class="content">キャンセル</div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+<div class="item-wrap">
+  <div class="item-block">
+    <div class="title">『 <%= @post.name %> 』</div>
+    <div class="author"><%= @post.author %><span>（著）</span></div>
+    <div class="celebrity" href="">
+      <%= image_tag 'celebrity.png', class: 'image' %>
+      <div class="name"><%= @post.celebrity %><span class="small">さんの推し本です</span></div>
+    </div>
+    <div class="bubble"><%= @post.introduction %></div>
+    <% unless @post.reference.empty? %>
+      <div class="info">
+        <div class="title">参考URL</div><a class="contents -link" href=<%= @post.reference %> target=”_blank”><%= @post.reference %></a>
+      </div>
+    <% end %>
+    <div class="info">
+      <div class="title">投稿者</div>
+      <%= link_to @post_user, class: "contents -link" do %>
+        <%= @post_user.name %>
+      <% end %>
+    </div>
+  </div>
+</div>

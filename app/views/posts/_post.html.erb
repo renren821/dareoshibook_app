@@ -1,14 +1,10 @@
 <li class="item-wrap">
-  <a class="item-block" href="">
+  <%= link_to post, class: "item-block" do %>
     <div class="title">『 <%= post.name %> 』</div>
     <div class="author"><%= post.author %><span>（著）</span></div>
     <div class="celebrity"><%= image_tag 'celebrity.png', class: 'image' %>
       <div class="name"><%= post.celebrity %><span class="small">さんの推し本</span></div>
     </div>
     <div class="bubble"><%= post.introduction %></div>
-  </a>
-  <% if current_user?(post.user) %>
-    <%= link_to "削除", post, method: :delete,
-                                      data: { confirm: "本当に削除してよろしいですか？" } %>
   <% end %>
 </li>

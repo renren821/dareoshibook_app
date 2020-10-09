@@ -18,6 +18,9 @@
     <% flash.each do |message_type, message| %>
         <div class="alert-block -<%= message_type %>"><%= message %></div>
       <% end %>
+    <%= link_to upload_path, class: 'floating-button' do %>
+      <div class="cover"></div>
+    <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>
     <%= render 'layouts/javascript' %>

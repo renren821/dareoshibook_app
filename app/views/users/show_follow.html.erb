@@ -1,0 +1,25 @@
+<% provide(:title, @title) %>
+
+<h3 class="g1-heading"><%= @user.name %>の<%= @title %></h3>
+<div class="info-block">
+  <div class="cover">
+    <div class="block">
+      <div class="count"><%= @users.count %></div>
+      <div class="type"><%= @title %></div>
+    </div>
+  </div>
+</div>
+<%= will_paginate previous_label: '&lt', next_label: '&gt', inner_window: 1, outer_window: 0 %>
+<div class="item-wrap">
+  <% if @users.any? %>
+    <div class="list-border">
+      <%= render @users %>
+    </div>
+  <% else %>
+    <div class="list-border">
+      <%= @title %>のユーザーはいません。
+    </div>
+  <% end %>
+</div>
+<%= will_paginate previous_label: '&lt', next_label: '&gt', inner_window: 1, outer_window: 0 %>
+      

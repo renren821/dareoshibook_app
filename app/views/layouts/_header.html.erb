@@ -26,15 +26,11 @@
       </div>
       <% if logged_in? %>
         <div class="menu-list">
-          <%= link_to '#', class: 'item' do %>
+          <%= link_to root_path, class: 'item' do %>
             <div class="title">マイページ</div>
             <div class="arrow"></div>
           <% end %>
-          <%= link_to '#', class: 'item' do %>
-            <div class="title">お気に入り</div>
-            <div class="arrow"></div>
-          <% end %>
-          <%= link_to '#', class: 'item' do %>
+          <%= link_to current_user, class: 'item' do %>
             <div class="title">投稿した本</div>
             <div class="arrow"></div>
           <% end %>
@@ -46,7 +42,9 @@
       <% end %>
       <div class="menu-footer">
         <% if logged_in? %>
-          <div class="remove">アカウントを削除する</div>
+          <% if !current_user.admin? && current_user?(@user) %>
+            <%= link_to "アカウントを削除する", @user, method: :delete, data: { confirm: "本当に削除してよろしいですか？" }, class: 'remove' %>
+          <% end %>
         <% else %>
           <div class="remove -black">アカウントを作成する</div>
         <% end %>
