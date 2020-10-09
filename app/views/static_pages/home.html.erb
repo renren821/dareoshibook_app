@@ -1,16 +1,22 @@
 <% provide(:title, "") %>
 
 <% if logged_in? %>
-<%= link_to upload_path, class: 'floating-button' do %>
-  <div class="cover"></div>
-<% end %>
-<h3 class="g1-heading">マイページ</h3>
-<div class="info-block">
-  <%= render 'shared/stats' %>
-</div>
-<ul class="item-list">
-  <%= render 'shared/feed' %>
-</ul>
+  <%= link_to upload_path, class: 'floating-button' do %>
+    <div class="cover"></div>
+  <% end %>
+  <h3 class="g1-heading">マイページ</h3>
+  <div class="info-block">
+    <%= render 'shared/stats' %>
+  </div>
+  <% if @user.posts.any? %>
+    <ul class="item-list">
+      <%= render 'shared/feed' %>
+    </ul>
+  <% else %>
+    <h3 class="g1-heading">まだ投稿がないため、新着の誰推し本を表示しています。</h3>
+    <ul class="item-list">
+      <%= render @latest_posts %>
+    </ul>
 <% else %>
   <div class="item-wrap">
     <div class="b-heading">誰推しBook</div>
