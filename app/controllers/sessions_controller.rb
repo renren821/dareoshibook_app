@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       else
         message  = "アカウントが有効化されていません。"
         message += "メールでアクティベーションリンクを確認してください。"
-        flash[:warning] = message
+        flash[:danger] = message
         redirect_to root_url
       end
     else
