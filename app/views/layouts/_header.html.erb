@@ -6,13 +6,7 @@
     <%= link_to root_path, class: 'header-logo' do %>
       <h2 class="title">誰推しBook</h2>
     <% end %>
-    <% if logged_in? %>
-      <%= link_to '#', class: 'header-post' do %>
-        <img class="image" src="https://placehold.jp/150x150.png">
-      <% end %>
-    <% else %>
-      <div class="empty"></div>
-    <% end %>
+    <div class="empty"></div>
   </div>
   <div class="menu-area">
     <div class="menu-content">
