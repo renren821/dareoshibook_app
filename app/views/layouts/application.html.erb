@@ -16,10 +16,12 @@
   <%= render 'layouts/header' %>
   <div class="layout-wrap">
     <% flash.each do |message_type, message| %>
-        <div class="alert-block -<%= message_type %>"><%= message %></div>
+      <div class="alert-block -<%= message_type %>"><%= message %></div>
+    <% end %>
+    <% if logged_in? %>
+      <%= link_to upload_path, class: 'floating-button' do %>
+        <div class="cover"></div>
       <% end %>
-    <%= link_to upload_path, class: 'floating-button' do %>
-      <div class="cover"></div>
     <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>

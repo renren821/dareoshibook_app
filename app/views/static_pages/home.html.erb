@@ -1,9 +1,6 @@
 <% provide(:title, "") %>
 
 <% if logged_in? %>
-  <%= link_to upload_path, class: 'floating-button' do %>
-    <div class="cover"></div>
-  <% end %>
   <h3 class="g1-heading">マイページ</h3>
   <div class="info-block">
     <%= render 'shared/stats' %>
