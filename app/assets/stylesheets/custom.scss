@@ -186,3 +186,30 @@ button {
 .menu-footer > .remove {
   display: block;
 }
+
+// ゲストの情報
+.guest-block {
+  padding: 15px 15px 10px;
+  margin: 45px 0 10px;
+  background-color: #f0edee;
+  border-radius: 10px;
+}
+
+.guest-block > .heading {
+  padding-bottom: 13px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, .6);
+}
+
+.guest-block > .box {
+  display: flex;
+  padding-bottom: 8px;
+}
+
+.guest-block > .box > .title {
+  color: rgba(0, 0, 0, .4);
+}
+
+.guest-block > .box > .content {
+  color: rgba(0, 0, 0, .6);
+}
