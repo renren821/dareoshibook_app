@@ -1,41 +1,12 @@
-# Ruby on Rails チュートリアルのサンプルアプリケーション
+# 著名人のお勧め本を共有するサイト『誰推しBook』
 
-これは、次の教材で作られたサンプルアプリケーションです。   
-[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
-[Michael Hartl](http://www.michaelhartl.com/) 著
+これはオリジナルポートフォリオになります。
+[https://dareoshibook.herokuapp.com/](https://dareoshibook.herokuapp.com/)
 
-## ライセンス
+## 実装した機能
 
-[Ruby on Rails チュートリアル](https://railstutorial.jp/)内にある
-ソースコードはMITライセンスとBeerwareライセンスのもとで公開されています。
-詳細は [LICENSE.md](LICENSE.md) をご覧ください。
-
-## 使い方
-
-このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
-その後、次のコマンドで必要になる RubyGems をインストールします。
-
-```
-$ bundle install --without production
-```
-
-その後、データベースへのマイグレーションを実行します。
-
-```
-$ rails db:migrate
-```
-
-最後に、テストを実行してうまく動いているかどうか確認してください。
-
-```
-$ rails test
-```
-
-テストが無事に通ったら、Railsサーバーを立ち上げる準備が整っているはずです。
-
-```
-$ rails server
-```
-
-詳しくは、[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
-を参考にしてください。
+・ログイン機能
+・投稿機能
+・フォロー機能
+・いいね機能
+・RSpecでのテスト
